@@ -1,0 +1,61 @@
+EXEMPLO COMPLETO INDEX.HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Filmes Favoritos</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f8ff;
+margin: 0;
+padding: 20px;
+}
+h1 {
+text-align: center;
+color: #333;
+}
+ul {
+list-style: none;
+padding: 0;
+}
+li {
+background-color: #fff;
+margin: 10px 0;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+</head>
+<body>
+<h1 id="titulo">Carregando...</h1>
+<ul id="lista"></ul>
+
+<script>
+// JSON embutido na página
+const dados = {
+"titulo": "Meus Filmes Favoritos",
+"filmes": [
+{"nome": "O Senhor dos Anéis", "genero": "Fantasia"},
+{"nome": "Matrix", "genero": "Ficção Científica"},
+{"nome": "Inception", "genero": "Ação e Suspense"}
+]
+};
+
+// Exibir o título
+document.getElementById('titulo').textContent = dados.titulo;
+
+// Exibir a lista de filmes
+const lista = document.getElementById('lista');
+dados.filmes.forEach(filme => {
+const item = document.createElement('li');
+item.textContent = `${filme.nome} - Gênero: ${filme.genero}`;
+lista.appendChild(item);
+});
+</script>
+</body>
+</html>
